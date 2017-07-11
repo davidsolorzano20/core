@@ -6,10 +6,14 @@
  * Date: 7/8/17
  * Time: 4:47 PM
  */
-namespace Davis\core\http\request;
+namespace Davis\http\request;
 
-use Davis\core\http\thunder\route\exception\RouterException;
+use Davis\http\thunder\route\exception\RouterException;
 
+/**
+ * Class Request
+ * @package Davis\http\request
+ */
 
 class Request {
 

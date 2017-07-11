@@ -6,10 +6,10 @@
  * Time: 3:23 PM
  */
 
-namespace Davis\core\http\redirect;
+namespace Davis\http\redirect;
 
 
-use Davis\core\baseurl\BaseUrl;
+use Davis\baseurl\BaseUrl;
 
 /**
  * Class Response

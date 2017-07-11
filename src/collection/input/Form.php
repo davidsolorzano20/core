@@ -6,9 +6,14 @@
  * Time: 02:32 PM
  */
 
-namespace Davis\core\collection\input;
+namespace Davis\collection\input;
 
-use Davis\core\http\thunder\route\RouterException;
+use Davis\http\thunder\route\RouterException;
+
+/**
+ * Class Form
+ * @package Davis\collection\input
+ */
 
 class Form {
 	private $name;

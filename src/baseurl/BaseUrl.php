@@ -6,8 +6,12 @@
  * Time: 10:21 AM
  */
 
-namespace Davis\core\baseurl;
+namespace Davis\baseurl;
 
+/**
+ * Class BaseUrl
+ * @package Davis\baseurl
+ */
 
 class BaseUrl {
 

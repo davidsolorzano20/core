@@ -6,7 +6,7 @@
  * Time: 09:03 AM
  */
 
-namespace Davis\core\http\thunder\route\exception;
+namespace Davis\http\thunder\route\exception;
 /**
  * Class RouterException
  * @package Davis\core\http\thunder\route\exception

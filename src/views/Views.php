@@ -6,11 +6,15 @@
  * Time: 05:55 PM
  */
 
-namespace Davis\core\views;
+namespace Davis\views;
 
 
-use Davis\core\directory\Directory;
-use Davis\core\security\Security;
+use Davis\directory\Directory;
+
+/**
+ * Class Views
+ * @package Davis\views
+ */
 
 class Views {
 	private static $root = 'develop/views';
@@ -22,7 +26,7 @@ class Views {
 	}
 
 	public static function go($views, $array = []) {
-		require Directory::Dir().'/vendor/davidsolorzano20/core/html/HtmlResources.php';
+		require Directory::Dir().'vendor/davidsolorzano20/core/src/loader/loader.php';
 		$twig_views = '';
 		if (!empty($views)) {
 			$file = str_replace('', '',$views);

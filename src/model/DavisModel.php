@@ -6,9 +6,14 @@
  * Time: 07:04 PM
  */
 
-namespace Davis\core\model;
+namespace Davis\model;
 
 use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class DavisModel
+ * @package Davis\model
+ */
 
 class DavisModel extends Model {
 

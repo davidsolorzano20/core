@@ -6,10 +6,10 @@
  * Time: 01:55 PM
  */
 
-namespace Davis\core\http\session;
+namespace Davis\http\session;
 
-use Davis\core\http\thunder\route\RouterException;
-use Davis\core\interfaces\session\InterfaceSession;
+use Davis\http\thunder\route\RouterException;
+use Davis\interfaces\session\InterfaceSession;
 
 /**
  * Class Session
