@@ -1,0 +1,27 @@
+{
+  "name": "davidsolorzano20/core",
+  "description": "Core for framework DavisFrameworks",
+  "type": "project",
+  "support": {
+    "issues": "https://github.com/davidsolorzano20/core/issues"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Luis Solorzano",
+      "email": "luisnic20@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0.4-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Davis\\": "src"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+html, body {
+  background-color: #fff;
+  color: #636b6f;
+  font-weight: 100;
+  margin: 0;
+  text-align: center;
+}
+h1.core-title {
+  font-size: 8em;
+  margin-top: 10%;
+  font-family: 'Tangerine', cursive;
+}
+.social-network > a {
+  color: #636b6f;
+  padding: 0 8px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+}
+.social-network > a > i {
+  color: #286090;
+}
