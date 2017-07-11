@@ -6,10 +6,14 @@
  * Time: 8:51 PM
  */
 
-namespace Davis\core\model;
-
+namespace Davis\model;
 
 use Illuminate\Database\Capsule\Manager;
+
+/**
+ * Class DavisTable
+ * @package Davis\model
+ */
 
 class DavisTable extends Manager {
 

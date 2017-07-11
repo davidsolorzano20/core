@@ -6,10 +6,15 @@
  * Time: 07:31 AM
  */
 
-namespace Davis\core\database;
+namespace Davis\database;
 
 
 use Illuminate\Database\Capsule\Manager;
+
+/**
+ * Class BaseDatabase
+ * @package Davis\database
+ */
 
 Class BaseDatabase {
 

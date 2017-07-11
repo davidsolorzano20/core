@@ -7,6 +7,10 @@
  */
 
 namespace DavisPostInstall;
+/**
+ * Class Installer
+ * @package DavisPostInstall
+ */
 
 class Installer {
 

@@ -25,7 +25,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Davis\\": "src"
+      "Davis\\": "src",
+      "DavisPostInstall\\": "src/postinstall"
     }
   }
 }

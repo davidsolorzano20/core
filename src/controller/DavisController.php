@@ -6,10 +6,15 @@
  * Time: 07:31 AM
  */
 
-namespace Davis\core\controller;
+namespace Davis\controller;
 
-use Davis\core\directory\Directory;
+use Davis\directory\Directory;
 use Illuminate\Database\Capsule\Manager;
+
+/**
+ * Class DavisController
+ * @package Davis\controller
+ */
 
 class DavisController {
 

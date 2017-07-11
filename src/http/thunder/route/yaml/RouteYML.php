@@ -6,8 +6,8 @@
  * Time: 5:03 PM
  */
 
-namespace Davis\core\http\thunder\route\yaml;
-use Davis\core\http\thunder\route\router\Routing;
+namespace Davis\http\thunder\route\yaml;
+use Davis\http\thunder\route\router\Routing;
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
 

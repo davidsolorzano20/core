@@ -6,8 +6,12 @@
  * Time: 02:57 PM
  */
 
-namespace Davis\core\directory;
+namespace Davis\directory;
 
+/**
+ * Class Directory
+ * @package Davis\directory
+ */
 
 class Directory {
 

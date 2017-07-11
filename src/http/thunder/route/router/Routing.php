@@ -6,11 +6,11 @@
  * Time: 08:23 AM
  */
 
-namespace Davis\core\http\thunder\route\router;
+namespace Davis\http\thunder\route\router;
 
-use Davis\core\baseurl\BaseUrl;
-use Davis\core\http\thunder\route\route\Route;
-use Davis\core\views\Views;
+use Davis\baseurl\BaseUrl;
+use Davis\http\thunder\route\route\Route;
+use Davis\views\Views;
 
 /**
  * Class Router

@@ -6,7 +6,7 @@
  * Time: 10:11 AM
  */
 
-namespace Davis\core\http\thunder\route\route;
+namespace Davis\http\thunder\route\route;
 /**
  * Class Route
  * @package Davis\core\http\thunder\route\route
