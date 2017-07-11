@@ -19,26 +19,14 @@ $twig = new \Twig_Environment($loader);
  * Twig Functions
  */
 
-$style = new \Twig_Function('style_davis', function ($text) {
-	$found = strpos($text, '.css');
-	if ($found)	{
+$assets = new \Twig_Function('asset_davis', function ($text) {
+	if (strpos($text, '.css'))	{
+		return BaseUrl::url().'web/'.$text;
+	} else if (strpos($text, '.js')){
+		return BaseUrl::url().'web/'.$text;
+	} else {
 		return BaseUrl::url().'web/'.$text;
 	}
-});
-
-$script = new \Twig_Function('script_davis', function ($text) {
-	$found = strpos($text, '.js');
-	if ($found)	{
-		return BaseUrl::url().'web/'.$text;
-	}
-});
-
-$images = new \Twig_Function('images_davis', function ($text) {
-	return BaseUrl::url().'web/'.$text;
-});
-
-$video = new \Twig_Function('video_davis', function ($text) {
-	return Security::urlBaseHttp().'web/'.$text;
 });
 
 $route = new \Twig_Function('route', function ($route) {
@@ -54,8 +42,5 @@ $route = new \Twig_Function('route', function ($route) {
  * Twig Add Functions
  */
 
-$twig->addFunction($style);
-$twig->addFunction($script);
-$twig->addFunction($images);
-$twig->addFunction($video);
+$twig->addFunction($assets);
 $twig->addFunction($route);
