@@ -36,10 +36,10 @@ class Route {
 		return TRUE;
 	}
 
-	/*public function with($param, $regex) {
+	public function with($param, $regex) {
 		$this->params[$param] = str_replace('(','(?:',$regex);
 		return $this;
-	}*/
+	}
 
 	public function paramMatch($match) {
 		if (isset($this->params[$match[1]])) {

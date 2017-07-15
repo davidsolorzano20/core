@@ -14,9 +14,9 @@ namespace Davis\http\thunder\route\exception;
 
 
 class RouterException extends \Exception{
-	/*public function __construct($message, $code, \Exception $previous) {
+	public function __construct($message, $code, \Exception $previous) {
 		parent::__construct($message, $code, $previous);
-	}*/
+	}
 
 	public static function Input($input) {
 			if (empty($input)) {

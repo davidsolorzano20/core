@@ -18,7 +18,7 @@ use Davis\views\Views;
  * @package Davis\http\thunder\route\router
  */
 
-class Router {
+/*class Router {
 	private $url;
 	private $routes = [];
 	private $nameRoutes = [];
@@ -27,12 +27,12 @@ class Router {
 		$this->url = $_GET['url'];
 	}
 
-	public function get($path, $callable, $name = NULL) {
-		$this->add($path, $callable, $name, 'GET');
+	public function get($url, $method, $name = NULL) {
+		$this->add($url, $method, $name, 'GET');
 	}
 
-	public function post($path, $callable, $name = NULL) {
-		$this->add($path, $callable, $name, 'POST');
+	public function post($url, $method, $name = NULL) {
+		$this->add($url, $method, $name, 'POST');
 	}
 
 	public function add($path, $callable, $name, $method) {
@@ -66,4 +66,4 @@ class Router {
 
 	}
 
-}
+}*/

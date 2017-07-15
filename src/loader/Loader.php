@@ -19,7 +19,11 @@ class Loader {
 	}
 
 	public static function Load() {
-	return require Directory::Home().'vendor/davidsolorzano20/core/src/loader/loader.php';
+		return require Directory::Home('vendor/davidsolorzano20/core/src/loader/loader.php');
+	}
+
+	public static function Routing() {
+		return require Directory::Home('routes/web.php');
 	}
 
 }

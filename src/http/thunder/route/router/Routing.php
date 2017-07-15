@@ -9,6 +9,7 @@
 namespace Davis\http\thunder\route\router;
 
 use Davis\baseurl\BaseUrl;
+use Davis\http\thunder\route\exception\RouterException;
 use Davis\http\thunder\route\route\Route;
 use Davis\views\Views;
 
@@ -18,51 +19,88 @@ use Davis\views\Views;
  */
 
 class Routing {
-	private $url;
-	private $routes = [];
-	private $nameRoutes = [];
+	private static $url;
+	private static $routes = [];
+	private static $nameRoutes = [];
 
 	public function __construct() {
-		$this->url = $_GET['url'];
+		self::$url = $_GET['url'];
 	}
 
-	public function get($url, $method, $name = NULL) {
-		$this->add($url, $method, $name, 'GET');
+	public static function Load() {
+		self::$url = $_GET['url'];
 	}
 
-	public function post($url, $method, $name = NULL) {
-		$this->add($url, $method, $name, 'POST');
+	public static function get($path, $callable, $name = NULL) {
+		self::add($path, $callable, $name, 'GET');
 	}
 
-	public function add($path, $callable, $name, $method) {
+	public static function post($path, $callable, $name = NULL) {
+		self::add($path, $callable, $name, 'POST');
+	}
+
+	public static function delete($path, $callable, $name = NULL) {
+		self::add($path, $callable, $name, 'DELETE');
+	}
+
+	public static function put($path, $callable, $name = NULL) {
+		self::add($path, $callable, $name, 'PUT');
+	}
+
+	/*public static function update($path, $callable, $name = NULL) {
+		self::add($path, $callable, $name, 'UPDATE');
+	}*/
+
+	protected static function add($path, $callable, $name, $method) {
 		$route = new Route($path, $callable);
-		$this->routes[$method][] = $route;
+		self::$routes[$method][] = $route;
 		if ($name) {
-			$this->nameRoutes[$name] = $route;
+			self::$nameRoutes[$name] = $route;
 		}
 		return $route;
 	}
 
-	public function start() {
-		if (!isset($this->routes[$_SERVER['REQUEST_METHOD']])) {
-			echo('REQUEST_METHOD does not exist in DavisFramework');
-		}
-		foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
-			if ($route->match ($this->url)) {
-				return $route->call();
+	public static function start() {
+		if (!isset(self::$routes[$_SERVER['REQUEST_METHOD']])) {
+			echo('REQUEST_METHOD does not exist in Davis');
+		} else {
+			foreach (self::$routes[$_SERVER['REQUEST_METHOD']] as $route) {
+				if ($route->match (self::$url)) {
+					return $route->call();
+				}
 			}
+			if (self::$routes['DELETE']) {
+				foreach (self::$routes['DELETE'] as $route) {
+					if ($route->match (self::$url)) {
+						return $route->call();
+					}
+				}
+			}
+			if (self::$routes['PUT']) {
+				foreach (self::$routes['PUT'] as $route) {
+					if ($route->match (self::$url)) {
+						return $route->call();
+					}
+				}
+			}
+/*			if (self::$routes['UPDATE']) {
+				foreach (self::$routes['UPDATE'] as $route) {
+					if ($route->match (self::$url)) {
+						return $route->call();
+					}
+				}
+			}*/
 		}
 		$base_url = BaseUrl::url();
 		Views::go('error.404',['base_url'=>$base_url]);
 	}
 
 	public function url($name, $params = []) {
-		if (!isset($this->nameRoutes[$name])) {
+		if (!isset(self::$nameRoutes[$name])) {
 			$base_url = BaseUrl::url();
 			Views::go('error.404',['base_url'=>$base_url]);
 		}
-		$this->nameRoutes[$name] = $this->getURL($params);
+		self::$nameRoutes[$name] = $this->getURL($params);
 
 	}
-
 }

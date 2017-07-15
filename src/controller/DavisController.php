@@ -19,7 +19,7 @@ use Illuminate\Database\Capsule\Manager;
 class DavisController {
 
 	public function __construct() {
-		include Directory::Dir().'app/config/database.php';
+		include Directory::Home('app/config/database.php');
 		$connectionBase = new Manager();
 		$connectionBase->addConnection([
 			'driver' => $database['driver'],
