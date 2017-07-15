@@ -22,8 +22,8 @@ class Directory {
 		return $_SERVER['DOCUMENT_ROOT'];
 	}
 
-	public static function Home() {
-		return $_SERVER['DOCUMENT_ROOT'];
+	public static function Home($dir = NULL) {
+		return $_SERVER['DOCUMENT_ROOT'].$dir;
 	}
 
 }
